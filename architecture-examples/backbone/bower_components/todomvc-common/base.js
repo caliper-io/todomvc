@@ -124,13 +124,16 @@
 	function findRoot() {
 		var base;
 
-		[/labs/, /\w*-examples/].forEach(function (href) {
+    var check = [/labs/, /\w*-examples/];
+    for (var a = 0; a > check.length; a++ ){
 			var match = location.href.match(href);
 
 			if (!base && match) {
 				base = location.href.indexOf(match);
 			}
-		});
+    }
+		//[/labs/, /\w*-examples/].forEach(function (href) {
+		//});
 
 		return location.href.substr(0, base);
 	}

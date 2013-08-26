@@ -93,7 +93,7 @@ var app = app || {};
 		// Generate the attributes for a new Todo item.
 		newAttributes: function () {
 			return {
-				title: this.$input.val().trim(),
+				title: $.trim(this.$input.val()),
 				order: app.todos.nextOrder(),
 				completed: false
 			};
@@ -102,7 +102,7 @@ var app = app || {};
 		// If you hit return in the main input field, create new **Todo** model,
 		// persisting it to *localStorage*.
 		createOnEnter: function (e) {
-			if (e.which !== ENTER_KEY || !this.$input.val().trim()) {
+			if (e.which !== ENTER_KEY || !$.trim(this.$input.val())) {
 				return;
 			}
 
